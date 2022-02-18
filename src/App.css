@@ -83,7 +83,16 @@ h1 {
   animation-timing-function: linear;
   animation-play-state: paused;
 }
-button {
+#start {
+  width : 300px;
+  position : absolute;
+  top : 0;
+  margin-left : auto;
+  display : block;
+}
+
+#pause {
+  transform: translateX(100%);
   width : 300px;
   position : absolute;
   top : 0;

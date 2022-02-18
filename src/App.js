@@ -15,10 +15,15 @@ function App() {
     document.getElementById("parasut1").style.animationPlayState = "running";
     document.getElementById("bird1").style.animationPlayState = "running";
     document.getElementById("cloud1").style.animationPlayState = "running";
-    document.getElementsByTagName("button")[0].style.display="none";
     setInterval(function(){
       setScore(score - 1);
     },1000);
+  }
+  function pause(){
+    document.getElementById("star1").style.animationPlayState = "paused";
+    document.getElementById("parasut1").style.animationPlayState = "paused";
+    document.getElementById("bird1").style.animationPlayState = "paused";
+    document.getElementById("cloud1").style.animationPlayState = "paused";
   }
   document.addEventListener('keydown', function(e) {
     switch (e.keyCode) {
@@ -66,7 +71,8 @@ function App() {
 
         </img>
       </div>
-      <button onClick={click}>Start</button>
+      <button id="start" onClick={click}>Start</button>
+      <button id="pause" onClick={pause}>Pause</button>
     </div>
   );
 }
