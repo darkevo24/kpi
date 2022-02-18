@@ -9,9 +9,17 @@ function App() {
   var [right,setRight] = useState(0);
   var [up,setUp] = useState(0);
   var [down,setDown] = useState(0);
-  setInterval(function(){
-    setScore(score - 1);
-  },1000);
+
+  function click(){
+    document.getElementById("star1").style.animationPlayState = "running";
+    document.getElementById("parasut1").style.animationPlayState = "running";
+    document.getElementById("bird1").style.animationPlayState = "running";
+    document.getElementById("cloud1").style.animationPlayState = "running";
+    document.getElementsByTagName("button")[0].style.display="none";
+    setInterval(function(){
+      setScore(score - 1);
+    },1000);
+  }
   document.addEventListener('keydown', function(e) {
     switch (e.keyCode) {
         case 37:
@@ -38,9 +46,7 @@ function App() {
         <img id="cloud1" src={require("./cloud.png")}></img>
       </div>
       <div id="bird">
-        <img style =  {{ 
-          "bottom" : Math.random() * 200
-         }} id="bird1" src={require("./bird.png")}></img>
+        <img  id="bird1" src={require("./bird.png")}></img>
       </div>
       <div id="player">
         <img style={{ 
@@ -60,6 +66,7 @@ function App() {
 
         </img>
       </div>
+      <button onClick={click}>Start</button>
     </div>
   );
 }

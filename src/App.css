@@ -34,6 +34,7 @@ body {
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-play-state: paused;
 }
 #score {
   position : relative;
@@ -56,6 +57,7 @@ h1 {
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-play-state: paused;
 }
 
 #parasut1 {
@@ -67,6 +69,7 @@ h1 {
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-play-state: paused;
 }
 
 #star1 {
@@ -78,4 +81,12 @@ h1 {
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-play-state: paused;
+}
+button {
+  width : 300px;
+  position : absolute;
+  top : 0;
+  margin-left : auto;
+  display : block;
 }
