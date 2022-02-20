@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useCallback } from 'react';
 
 function App() {
   var [score,setScore] = useState(10);
@@ -10,7 +10,7 @@ function App() {
   var [up,setUp] = useState(0);
   var [down,setDown] = useState(0);
 
-  function click(){
+  const click = useCallback(function(){
     document.getElementById("star1").style.animationPlayState = "running";
     document.getElementById("parasut1").style.animationPlayState = "running";
     document.getElementById("bird1").style.animationPlayState = "running";
@@ -18,7 +18,12 @@ function App() {
     setInterval(function(){
       setScore(score - 1);
     },1000);
-  }
+    setInterval(function(){
+      document.getElementById("star1").style.right = Math.random() * 1000 + "px";
+      document.getElementById("parasut1").style.right = Math.random() * 1000 + "px";
+      document.getElementById("bird1").style.top = Math.random() * 500 + "px";
+    },6000);
+  })
   function pause(){
     document.getElementById("star1").style.animationPlayState = "paused";
     document.getElementById("parasut1").style.animationPlayState = "paused";
